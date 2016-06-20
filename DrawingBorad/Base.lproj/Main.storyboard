@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawingBorad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dX-p8-e06" customClass="Board" customModule="DrawingBorad" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xy-ob-Mgg">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="USs-Ez-BPj"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="线宽" id="Ahh-p7-Puy"/>
+                                    <barButtonItem style="plain" id="hTV-cW-BdM">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="20" id="omJ-nk-3uF">
+                                            <rect key="frame" x="64" y="6.5" width="118" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </slider>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LBd-dh-Uut"/>
+                                    <barButtonItem title="清空" id="uCh-eR-jdY">
+                                        <connections>
+                                            <action selector="clearBoard:" destination="BYZ-38-t0r" id="5Z4-uc-DAV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZEn-eA-Hrb"/>
+                                    <barButtonItem title="保存" id="T0d-xZ-Y1x">
+                                        <connections>
+                                            <action selector="saveToAlbum:" destination="BYZ-38-t0r" id="CPH-eh-2kw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8dX-p8-e06" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="C8V-NB-0KE"/>
+                            <constraint firstItem="5xy-ob-Mgg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L2d-bF-pgx"/>
+                            <constraint firstItem="5xy-ob-Mgg" firstAttribute="top" secondItem="8dX-p8-e06" secondAttribute="bottom" id="Nyj-q0-0K2"/>
+                            <constraint firstAttribute="trailing" secondItem="8dX-p8-e06" secondAttribute="trailing" id="VFV-bX-K8l"/>
+                            <constraint firstAttribute="trailing" secondItem="5xy-ob-Mgg" secondAttribute="trailing" id="agv-my-B5I"/>
+                            <constraint firstItem="5xy-ob-Mgg" firstAttribute="top" secondItem="8dX-p8-e06" secondAttribute="bottom" priority="800" id="c9g-IC-cvW"/>
+                            <constraint firstItem="8dX-p8-e06" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hT1-qY-c8i"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5xy-ob-Mgg" secondAttribute="bottom" id="pXv-u1-szZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Nyj-q0-0K2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="board" destination="8dX-p8-e06" id="iyj-H9-qXv"/>
+                        <outlet property="strokeWidthSlider" destination="omJ-nk-3uF" id="uQG-MF-wH0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263" y="250"/>
+        </scene>
+    </scenes>
+</document>
